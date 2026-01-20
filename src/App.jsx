@@ -72,12 +72,12 @@ function App() {
                 <p>Team Names:</p>
                 <div className="flex flex-col gap-2 justify-center md:flex-row">
                     <input
-                        value={teamNames[server]}
+                        value={teamNames[0]}
                         onChange={(event) => updateTeamName(event, 0)}
                         className={`border p-2 rounded ${server === 0 ? "bg-green-600 text-white" : ""}`}
                     />
                     <input
-                        value={teamNames[server === 0 ? 1 : 0]}
+                        value={teamNames[1]}
                         onChange={(event) => updateTeamName(event, 1)}
                         className={`border p-2 rounded ${server === 1 ? "bg-green-600 text-white" : ""}`}
                     />
