@@ -1,157 +1,134 @@
 @font-face {
   font-family: 'Graphik';
-  src: url("./assets/fonts/graphik/Graphik-Thin.woff") format("woff");
+  src: url("./fonts/graphik/Graphik-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik';
-  src: url("./assets/fonts/graphik/Graphik-Extralight.woff") format("woff");
+  src: url("./fonts/graphik/Graphik-Extralight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik';
-  src: url("./assets/fonts/graphik/Graphik-Light.woff") format("woff");
+  src: url("./fonts/graphik/Graphik-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik';
-  src: url("./assets/fonts/graphik/Graphik-Regular.woff") format("woff");
+  src: url("./fonts/graphik/Graphik-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik';
-  src: url("./assets/fonts/graphik/Graphik-Medium.woff") format("woff");
+  src: url("./fonts/graphik/Graphik-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik';
-  src: url("./assets/fonts/graphik/Graphik-Bold.woff") format("woff");
+  src: url("./fonts/graphik/Graphik-Bold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik';
-  src: url("./assets/fonts/graphik/Graphik-Semibold.woff") format("woff");
+  src: url("./fonts/graphik/Graphik-Semibold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik';
-  src: url("./assets/fonts/graphik/Graphik-Black.woff") format("woff");
+  src: url("./fonts/graphik/Graphik-Black.woff") format("woff");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik';
-  src: url("./assets/fonts/graphik/Graphik-Super.woff") format("woff");
+  src: url("./fonts/graphik/Graphik-Super.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik Wide';
-  src: url("./assets/fonts/graphik-wide/GraphikWide-Thin.woff") format("woff");
+  src: url("./fonts/graphik-wide/GraphikWide-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik Wide';
-  src: url("./assets/fonts/graphik-wide/GraphikWide-Extralight.woff") format("woff");
+  src: url("./fonts/graphik-wide/GraphikWide-Extralight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik Wide';
-  src: url("./assets/fonts/graphik-wide/GraphikWide-Light.woff") format("woff");
+  src: url("./fonts/graphik-wide/GraphikWide-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik Wide';
-  src: url("./assets/fonts/graphik-wide/GraphikWide-Regular.woff") format("woff");
+  src: url("./fonts/graphik-wide/GraphikWide-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik Wide';
-  src: url("./assets/fonts/graphik-wide/GraphikWide-Medium.woff") format("woff");
+  src: url("./fonts/graphik-wide/GraphikWide-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik Wide';
-  src: url("./assets/fonts/graphik-wide/GraphikWide-Bold.woff") format("woff");
+  src: url("./fonts/graphik-wide/GraphikWide-Bold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik Wide';
-  src: url("./assets/fonts/graphik-wide/GraphikWide-Semibold.woff") format("woff");
+  src: url("./fonts/graphik-wide/GraphikWide-Semibold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik Wide';
-  src: url("./assets/fonts/graphik-wide/GraphikWide-Black.woff") format("woff");
+  src: url("./fonts/graphik-wide/GraphikWide-Black.woff") format("woff");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Graphik Wide';
-  src: url("./assets/fonts/graphik-wide/GraphikWide-Super.woff") format("woff");
+  src: url("./fonts/graphik-wide/GraphikWide-Super.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
 
-* {
-  font-family: 'Graphik', 'sans';
-  box-sizing: border-box;
-}
 
-@font-face {
-  font-family: 'Gulim';
-  src: url("./assets/fonts/Gulim/gulim.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
+html {
+  font-family: 'Graphik', 'sans-serif';
+} 
 
-@font-face {
-  font-family: 'Simhei';
-  src: url("./assets/fonts/Simhei/simhei.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'MS Gothic';
-  src: url("./assets/fonts/MSGothic/MS Gothic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Cordia New';
-  src: url("./assets/fonts/CordiaNew/cordia.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Angsana New';
-  src: url("./assets/fonts/AngsanaNew/angsa.ttf") format("truetype");
+.text-wide {
+  font-family: 'Graphik Wide', 'sans-serif'!important;
 }
