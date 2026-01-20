@@ -108,7 +108,7 @@ function App() {
                     {server !== null && (
                         <div id="scoreboard">
                             <p className="text-center text-lg text-green-500">
-                                <strong>Serving:</strong> {teamNames[server]}
+                                Serving: <strong>{teamNames[server]}</strong>
                             </p>
                             <div className="text-center my-4">
                                 <div className="text-green-500 text-4xl text-wide font-bold pb-4">
