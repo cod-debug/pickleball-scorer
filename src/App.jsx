@@ -14,18 +14,15 @@ const defaultValues = {
 function App() {
     const [score, setScore] = useState(defaultValues.score);
     const [server, setServer] = useState(defaultValues.server);
-    const [players, setPlayers] = useState(defaultValues.players);
     const [teamNames, setTeamNames] = useState(defaultValues.teamNames);
 
     const updateScore = (scoredTeam) => {
         if (server === scoredTeam) {
             setScore([score[0] + 1, score[1], score[2]]);
+        } else if (score[2] === 2) {
+            changeService();
         } else {
-            if (score[2] === 2) {
-                changeService();
-            } else {
-                setScore([score[0], score[1], score[2] + 1]);
-            }
+            setScore([score[0], score[1], score[2] + 1]);
         }
     };
 
@@ -46,12 +43,11 @@ function App() {
     const resetGame = () => {
         setScore(defaultValues.score);
         setServer(defaultValues.server);
-        setPlayers(defaultValues.players);
         setTeamNames(defaultValues.teamNames);
     };
 
     return (
-        <main>
+        <main className="text-gray-700">
             <div className="py-2 px-4 bg-green-700 flex justify-between">
                 <div className="flex gap-4 items-center">
                     <img
@@ -76,12 +72,12 @@ function App() {
                 <p>Team Names:</p>
                 <div className="flex flex-col gap-2 justify-center md:flex-row">
                     <input
-                        value={teamNames[0]}
+                        value={teamNames[server]}
                         onChange={(event) => updateTeamName(event, 0)}
                         className={`border p-2 rounded ${server === 0 ? "bg-green-600 text-white" : ""}`}
                     />
                     <input
-                        value={teamNames[1]}
+                        value={teamNames[server === 0 ? 1 : 0]}
                         onChange={(event) => updateTeamName(event, 1)}
                         className={`border p-2 rounded ${server === 1 ? "bg-green-600 text-white" : ""}`}
                     />
@@ -157,9 +153,14 @@ function App() {
                     )}
                 </div>
             </div>
-                
+
             <div className="m-4 block md:hidden">
-              <button onClick={resetGame} className="bg-green-600 text-white px-4 py-2 hover:bg-green-700 rounded">Reset Game</button>
+                <button
+                    onClick={resetGame}
+                    className="bg-green-600 text-white px-4 py-2 hover:bg-green-700 rounded"
+                >
+                    Reset Game
+                </button>
             </div>
         </main>
     );
