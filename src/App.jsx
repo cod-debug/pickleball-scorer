@@ -40,6 +40,15 @@ function App() {
         });
     };
 
+    const updateScoreManually = (event, index) => {
+        const value = event.target.value;
+        setScore((prevValue) => {
+            const newValues = [...prevValue];
+            newValues[index] = parseInt(value) || 0;
+            return newValues;
+        });
+    }
+
     const resetGame = () => {
         setScore(defaultValues.score);
         setServer(defaultValues.server);
@@ -117,16 +126,19 @@ function App() {
                                 <div className="text-[32pt] font-bold md:text-[32pt] flex gap-4 justify-center items-center">
                                     <input
                                         value={score[0]}
+                                        onChange={(event) => { updateScoreManually(event, 0) }}
                                         className="w-[60pt] md:w-[64pt] text-center border border-green-500 text-green-500 rounded"
                                     />
                                     <span>-</span>
                                     <input
                                         value={score[1]}
+                                        onChange={(event) => { updateScoreManually(event, 1) }}
                                         className="w-[60pt] md:w-[64pt] text-center"
                                     />
                                     <span>-</span>
                                     <input
                                         value={score[2]}
+                                        onChange={(event) => { updateScoreManually(event, 2) }}
                                         className="w-[60pt] md:w-[64pt] text-center border border-green-500 text-green-500 rounded"
                                     />
                                 </div>
