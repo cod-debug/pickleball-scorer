@@ -20,21 +20,24 @@ function App() {
     const [server, setServer] = useState(defaultValues.server);
     const [teamNames, setTeamNames] = useState(defaultValues.teamNames);
 
-    const updateScore = useCallback((scoredTeam) => {
-        setScore(prevScore => {
-            if (server === scoredTeam) {
-                return [prevScore[0] + 1, prevScore[1], prevScore[2]];
-            } else if (prevScore[2] === 2) {
-                setServer(prev => prev === 0 ? 1 : 0);
-                return [prevScore[1], prevScore[0], 1];
-            } else {
-                return [prevScore[0], prevScore[1], prevScore[2] + 1];
-            }
-        });
-    }, [server]);
+    const updateScore = useCallback(
+        (scoredTeam) => {
+            setScore((prevScore) => {
+                if (server === scoredTeam) {
+                    return [prevScore[0] + 1, prevScore[1], prevScore[2]];
+                } else if (prevScore[2] === 2) {
+                    setServer((prev) => (prev === 0 ? 1 : 0));
+                    return [prevScore[1], prevScore[0], 1];
+                } else {
+                    return [prevScore[0], prevScore[1], prevScore[2] + 1];
+                }
+            });
+        },
+        [server],
+    );
 
     const updateTeamName = useCallback((event, index) => {
-        setTeamNames(prev => {
+        setTeamNames((prev) => {
             const newValues = [...prev];
             newValues[index] = event.target.value;
             return newValues;
@@ -42,7 +45,7 @@ function App() {
     }, []);
 
     const updateScoreManually = useCallback((event, index) => {
-        setScore(prev => {
+        setScore((prev) => {
             const newValues = [...prev];
             newValues[index] = Number.parseInt(event.target.value) || 0;
             return newValues;
@@ -58,17 +61,17 @@ function App() {
     return (
         <main className="text-gray-700">
             <Header hasStarted={server !== null} onReset={resetGame} />
-            <TeamNameInput 
-                teamNames={teamNames} 
-                server={server} 
-                onUpdateTeamName={updateTeamName} 
+            <TeamNameInput
+                teamNames={teamNames}
+                server={server}
+                onUpdateTeamName={updateTeamName}
             />
             <div className="bg-white">
                 <div className="w-[720px] mx-auto max-w-full p-4">
                     {server === null ? (
-                        <ServerSelection 
-                            teamNames={teamNames} 
-                            onSelectServer={setServer} 
+                        <ServerSelection
+                            teamNames={teamNames}
+                            onSelectServer={setServer}
                         />
                     ) : (
                         <Scoreboard
@@ -81,14 +84,16 @@ function App() {
                     )}
                 </div>
             </div>
-            <div className="m-4 block md:hidden">
-                <button
-                    onClick={resetGame}
-                    className="bg-green-600 text-white px-4 py-2 hover:bg-green-700 rounded"
-                >
-                    Reset Game
-                </button>
-            </div>
+            {server !== null && (
+                <div className="m-4 block md:hidden mb-12">
+                    <button
+                        onClick={resetGame}
+                        className="bg-green-600 text-white px-4 py-2 hover:bg-green-700 rounded mx-auto block"
+                    >
+                        Reset Game
+                    </button>
+                </div>
+            )}
         </main>
     );
 }
